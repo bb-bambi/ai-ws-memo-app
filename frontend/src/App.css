@@ -71,22 +71,6 @@
   background: var(--accent-hover);
 }
 
-.sidebar-search {
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
-}
-
-.search-input {
-  width: 100%;
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  cursor: not-allowed;
-}
-
 .note-list {
   flex: 1;
   overflow-y: auto;

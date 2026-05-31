@@ -399,24 +399,3 @@ onClick={(e) => {
 }}
 ```
 
----
-
-### BUG-14: 検索機能がUIに存在するが完全に無効化されている
-**場所**: `frontend/src/components/Sidebar.jsx:13-19`  
-**内容**: 検索inputに `disabled` が付いており「準備中」と表示されるが、UIに存在することでユーザーが操作できると誤解する。未実装機能のUIを表示したままにすることはUXとして問題がある。
-
-**再現手順**:
-1. ブラウザで `http://localhost:5173` を開く
-2. 左サイドバー上部の検索ボックスをクリックする
-3. 何かテキストを入力しようとする
-4. 入力できず、カーソルも変わらないことを確認する（`disabled` 属性のため）
-5. ユーザーには検索機能があるように見えるが、一切機能しない
-
-**修正方法**: 未実装であれば検索UIをコンポーネントから削除する。実装するなら `notes` をキーワードでフィルタリングし、`disabled` を外してフロントエンド検索を実装する。
-```jsx
-// frontend/src/components/Sidebar.jsx — 削除する場合
-// <div className="sidebar-search"> ... </div> をまるごと削除
-
-// 実装する場合: Sidebar に searchQuery state を追加し
-// notes.filter(n => n.title.includes(query) || n.content.includes(query)) を渡す
-```

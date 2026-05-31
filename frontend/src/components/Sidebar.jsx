@@ -10,14 +10,6 @@ export default function Sidebar({ notes, selectedId, onSelect, onAdd, onDelete }
           ＋
         </button>
       </div>
-      <div className="sidebar-search">
-        <input
-          type="text"
-          placeholder="検索（準備中）"
-          disabled
-          className="search-input"
-        />
-      </div>
       <div className="note-list">
         {notes.length === 0 ? (
           <p className="note-list-empty">ノートがありません</p>
